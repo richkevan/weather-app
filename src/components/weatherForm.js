@@ -24,7 +24,7 @@ const WeatherForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const url = `https://api.weatherapi.com/v1/current.json?key=${process.env.weatherkey}&q=${location}&aqi=${aqi}`
+        const url = `https://api.weatherapi.com/v1/current.json?key=${process.env.WEATHER_KEY}&q=${location}&aqi=${aqi}`
             const response = await axios.get(url)
             .then(response => setWeather(response.data))
             .catch(error => console.log(error))
@@ -48,7 +48,7 @@ const WeatherForm = () => {
                 <div className='buttonContainer'>
                     <button onClick={(e) => {
                         e.preventDefault()
-                        console.log(process.env.weatherkey)}}>Locate me</button>
+                        console.log(process.env.WEATHER_KEY)}}>Locate me</button>
                     <input type='submit' value='Submit' onClick={handleSubmit}></input>
                 </div>
             </form>
