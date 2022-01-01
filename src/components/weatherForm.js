@@ -20,7 +20,6 @@ const WeatherForm = () => {
                 setAqi('yes')
             }
         }
-        console.log(location, aqi)
     }
 
     const handleSubmit = async (e) => {
@@ -29,7 +28,6 @@ const WeatherForm = () => {
             const response = await axios.get(url)
             .then(response => setWeather(response.data))
             .catch(error => console.log(error))
-            console.log(weather)
     }
 
     return (
@@ -50,7 +48,7 @@ const WeatherForm = () => {
                 <div className='buttonContainer'>
                     <button onClick={(e) => {
                         e.preventDefault()
-                        console.log(weather)}}>Locate me</button>
+                        console.log(process.env.weatherkey)}}>Locate me</button>
                     <input type='submit' value='Submit' onClick={handleSubmit}></input>
                 </div>
             </form>

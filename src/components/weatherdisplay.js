@@ -31,7 +31,6 @@ const WeatherDisplay = (props) => {
                     <p style={{ backgroundColor: aqi, display: 'block'}}>&nbsp;</p>
                     <button onClick={() => {
                         setAqiDetail(!aqiDetail)
-                        console.log(aqiDetail)
                         }}
                         style={{zIndex:1000}}>Details</button>
                     {aqiDetail && 
