@@ -24,10 +24,10 @@ const WeatherDisplay = (props) => {
                 <p>Wind Speed: <strong>{currentWeather.wind_mph} mph</strong></p>
                 <p>Wind Direction: <strong>{currentWeather.wind_dir}</strong></p>
             </div>
-            {currentWeather.air_quality !== undefined &&
+            {aqiValue !== undefined &&
                 <div className='infoCard'>
                     <h3>Air Quality</h3>
-                    <p>AQI: <strong>{currentWeather.air_quality['us-epa-index']}</strong></p>
+                    <p>AQI: <strong>{aqiValue['us-epa-index']}</strong></p>
                     <p style={{ backgroundColor: aqi, display: 'block'}}>&nbsp;</p>
                     <button onClick={() => {
                         setAqiDetail(!aqiDetail)
@@ -36,12 +36,12 @@ const WeatherDisplay = (props) => {
                         style={{zIndex:1000}}>Details</button>
                     {aqiDetail && 
                     <>
-                        <p>CO: <strong>{currentWeather.air_quality.co}</strong></p>
-                        <p>O3: <strong>{currentWeather.air_quality.o3}</strong></p>
-                        <p>NO2: <strong>{currentWeather.air_quality.no2}</strong></p>
-                        <p>SO2: <strong>{currentWeather.air_quality.so2}</strong></p>
-                        <p>PM2.5: <strong>{currentWeather.air_quality.pm2_5}</strong></p>
-                        <p>PM10: <strong>{currentWeather.air_quality.pm10}</strong></p>
+                        <p>CO: <strong>{aqiValue.co}</strong></p>
+                        <p>O3: <strong>{aqiValue.o3}</strong></p>
+                        <p>NO2: <strong>{aqiValue.no2}</strong></p>
+                        <p>SO2: <strong>{aqiValue.so2}</strong></p>
+                        <p>PM2.5: <strong>{aqiValue.pm2_5}</strong></p>
+                        <p>PM10: <strong>{aqiValue.pm10}</strong></p>
                     </>}
                 </div>
 

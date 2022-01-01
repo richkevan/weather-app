@@ -25,7 +25,7 @@ const WeatherForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const url = `http://api.weatherapi.com/v1/current.json?key=${process.env.weatherkey}&q=${location}&aqi=${aqi}`
+        const url = `https://api.weatherapi.com/v1/current.json?key=${process.env.weatherkey}&q=${location}&aqi=${aqi}`
             const response = await axios.get(url)
             .then(response => setWeather(response.data))
             .catch(error => console.log(error))
