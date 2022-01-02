@@ -27,7 +27,9 @@ const WeatherForm = () => {
             {enableHighAccuracy: true, timeout: 2500, maximumAge: 1000}
         )
     } , [])
+
     
+
     const searchOptions = {
         types: ['(cities)'],
         componentRestrictions: {country: 'us'}
@@ -70,8 +72,7 @@ const WeatherForm = () => {
     }
 
     const getWeather = async() => {
-        //  const url = `${baseURL}current.json?key=${process.env.REACT_APP_WEATHER_KEY}&q=${lat},${lng}&${aqi}`
-            const url = `${baseURL}current.json?key=51b3275436944c838e6211230213012&q=${cityPosition.lat},${cityPosition.lng}&aqi=${aqi}`
+            const url = `${baseURL}current.json?key=${process.env.REACT_APP_WEATHER_KEY}&q=${cityPosition.lat},${cityPosition.lng}&aqi=${aqi}`
             console.log('requesting')
             const response = await axios.get(url)
             .then(response => {
