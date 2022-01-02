@@ -2,7 +2,7 @@ import React from 'react'
 import './component.css'
 
 const WeatherDisplay = (props) => {
-    const [aqi, setAqi] = React.useState('green')
+    const [aqiColor, setAqiColor] = React.useState('green')
     const [aqiDetail, setAqiDetail] = React.useState(false)
     const currentWeather = props.weather.current
     const aqiValue = currentWeather.air_quality
@@ -28,7 +28,7 @@ const WeatherDisplay = (props) => {
                 <div className='infoCard'>
                     <h3>Air Quality</h3>
                     <p>AQI: <strong>{aqiValue['us-epa-index']}</strong></p>
-                    <p style={{ backgroundColor: aqi, display: 'block'}}>&nbsp;</p>
+                    <p style={{ backgroundColor: aqiColor, display: 'block'}}>&nbsp;</p>
                     <button onClick={() => {
                         setAqiDetail(!aqiDetail)
                         }}
